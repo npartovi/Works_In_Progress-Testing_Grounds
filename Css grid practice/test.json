@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1420751757000",
+      "Effect": "Allow",
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::property-management-dev",
+        "arn:aws:s3:::property-management-dev/*"
+      ],
+      "Principal": {
+        "AWS": "arn:aws:iam::528046694874:user/npartovi"
+      }
+    }
+  ]
+}
+            
