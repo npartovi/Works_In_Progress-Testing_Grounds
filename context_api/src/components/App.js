@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import Index from './index'
 
 const MyContext = React.createContext();
 
@@ -30,6 +31,7 @@ class App extends Component {
       <MyProvider>
       <div>
         <p>This is the App Component</p>
+        <Index />
       </div>
       </MyProvider>
       
