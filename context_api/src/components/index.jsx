@@ -38,28 +38,20 @@ class Index extends Component {
     randomStream(){
         let randomGame = this.state.gamesList[Math.floor(Math.random() * this.state.gamesList.length)]
 
-        let randomChannel = ""
-        axios.get('https://api.twitch.tv/kraken/streams?limit=20&game='+ this.state.randomGame, {'headers': {'Client-ID': Keys.twitch }})
+        axios.get('https://api.twitch.tv/kraken/streams?limit=20&game='+ randomGame, {'headers': {'Client-ID': Keys.twitch }})
             .then(res => {
-                randomChannel = res.data.streams[Math.floor(Math.random() * res.data.streams.length)]
+                let randomChannel = res.data.streams[Math.floor(Math.random() * res.data.streams.length)].channel.name
+                this.setState({randomChannel})
             });
-
-        this.setState({randomChannel: randomChannel})
-        
-        
-    
     }
 
-    // randomChannel(){
-    //     let randomChannel = ""
-    //     axios.get('https://api.twitch.tv/kraken/streams?limit=20&game='+ this.state.randomGame, {'headers': {'Client-ID': Keys.twitch }})
-    //         .then(res => {
-    //             randomChannel = res.data.streams[Math.floor(Math.random() * res.data.streams.length)]
-    //         });
-
-    //     this.setState({randomChannel: randomChannel})
-    // }
-
+    renderStream(){
+        if(this.state.randomChannel){
+            return(
+                <iframe src={`https://player.twitch.tv/?channel=${this.state.randomChannel}`} height="480" width="1080" frameBorder="0"></iframe>
+            )
+        }
+    }
 
     render(){
         console.log(this.state)
@@ -68,7 +60,7 @@ class Index extends Component {
                 random video
                 <button onClick={this.randomStream}>Click here for a random stream</button>
                 <div>
-                    This is where the stream will render
+                    {this.renderStream()}
                 </div>
             </div>
         )
