@@ -3,7 +3,6 @@ import Index from './index'
 
 const MyContext = React.createContext();
 
-//then create a provider component
 class MyProvider extends Component {
   state = {
     name:  'nima',
@@ -29,8 +28,7 @@ class App extends Component {
   render() {
     return (
       <MyProvider>
-      <div>
-        <p>This is the App Component</p>
+      <div className="main-grid-container">
         <Index />
       </div>
       </MyProvider>
