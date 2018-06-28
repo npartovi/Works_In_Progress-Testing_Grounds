@@ -2,9 +2,12 @@
 
 # dependencies
 /node_modules
+/src/
 
 # testing
 /coverage
+keys.js
+/keys
 
 # production
 /build
