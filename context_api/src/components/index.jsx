@@ -14,25 +14,20 @@ class Index extends Component {
         this.randomStream = this.randomStream.bind(this)
     }
 
-
-    // componentDidUpdate(){
-        
-    //     let results = []
-    //     this.state.videoList.forEach((game) => {
-    //         // console.log(game.game.name)
-    //         results.push(game.game.name)
-    //     })        
-    // }
-
     componentDidMount(){
-        let results = []
         axios.get('https://api.twitch.tv/kraken/games/top?limit=100' ,{'headers': {'Client-ID': Keys.twitch }})
             .then(res => {
+                let gamesList = []
                 res.data.top.forEach(game => {
-                    results.push(game.game.name)
+                    gamesList.push(game.game.name)
                 })
+                return gamesList
+
             })
-        this.setState({gamesList: results})
+            .then((gamesList) => {
+                this.setState({gamesList}, this.randomStream)
+            })
+        
     }
 
     randomStream(){
@@ -54,7 +49,6 @@ class Index extends Component {
     }
 
     render(){
-        console.log(this.state)
         return(
             <div>
                 random video
@@ -66,6 +60,5 @@ class Index extends Component {
         )
     }
 }
-
 
 export default Index
