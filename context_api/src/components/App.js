@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Index from './index'
+import TwitchIndex from './twitchStreams';
+import YoutubeIndex from './youtubeStreams';
 
 const MyContext = React.createContext();
 
@@ -29,7 +30,8 @@ class App extends Component {
     return (
       <MyProvider>
       <div className="main-grid-container">
-        <Index />
+        <TwitchIndex />
+        <YoutubeIndex />
       </div>
       </MyProvider>
       
