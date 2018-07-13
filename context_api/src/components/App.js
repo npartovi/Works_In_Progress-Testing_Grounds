@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TwitchIndex from './twitchStreams';
+import TwitchStream from './twitchStreams';
 import YoutubeIndex from './youtubeStreams';
 
 const MyContext = React.createContext();
@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <MyProvider>
       <div className="main-grid-container">
-        <TwitchIndex />
+        <TwitchStream />
         <YoutubeIndex />
       </div>
       </MyProvider>
@@ -38,36 +38,5 @@ class App extends Component {
     );
   }
 }
-
-
-// const Family = (props) => (
-//   <div className="family">
-//     <Person />
-//   </div>
-// )
-
-// class Person extends Component {
-  
-//     render(){
-//       return(
-//         <div className="person">
-//             <MyContext.Consumer>
-//               {(context) => (
-//                 <Fragment>
-//                   <p>{context.state.name}</p>
-//                   <p>{context.state.age}</p>
-//                   <button onClick={context.increaseAge}>increase age</button>
-//                 </Fragment>
-                
-//               )}
-//             </MyContext.Consumer>
-//         </div>
-//       )
-
-//   }
-// }
-
-
-
 
 export default App;
