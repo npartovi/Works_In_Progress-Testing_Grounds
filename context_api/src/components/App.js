@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TwitchStream from './twitchStreams';
 import YoutubeIndex from './youtubeStreams';
+import './styles/app.css'
 
 const MyContext = React.createContext();
 
