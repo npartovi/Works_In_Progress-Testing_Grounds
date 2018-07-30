@@ -5,11 +5,13 @@ nav{
 
     .nav-page-links{
         display: flex;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: 24px;
         
         li{
             margin: 20px;
+            padding: 10px;
+            border: 2px solid #6FC3DF;
         }
 
         a{
@@ -30,5 +32,20 @@ nav{
             color: white;
         }
 
+    }
+}
+
+.header-text {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh + -200px);
+
+    span {
+        color: #6FC3DF;
     }
 }

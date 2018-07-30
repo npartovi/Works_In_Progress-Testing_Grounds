@@ -4,10 +4,12 @@ nav {
   list-style: none; }
   nav .nav-page-links {
     display: flex;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 24px; }
     nav .nav-page-links li {
-      margin: 20px; }
+      margin: 20px;
+      padding: 10px;
+      border: 2px solid #6FC3DF; }
     nav .nav-page-links a {
       text-decoration: none;
       color: white; }
@@ -18,5 +20,17 @@ nav {
       margin: 20px; }
     nav .nav-social-links a {
       color: white; }
+
+.header-text {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh + -200px); }
+  .header-text span {
+    color: #6FC3DF; }
 
 /*# sourceMappingURL=header.css.map */
