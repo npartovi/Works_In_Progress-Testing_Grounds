@@ -1,12 +1,15 @@
 .about-me-container {
   height: 100vh;
   font-family: 'Raleway', sans-serif;
-  margin: 0 auto;
-  width: 1200px; }
+  background: linear-gradient(to bottom right, #11161E, #6FC3DF);
+  opacity: 0.9;
+  color: white; }
   .about-me-container img {
     height: 100vh; }
   .about-me-container .about-me-wrapper {
-    display: flex; }
+    display: flex;
+    margin: 0 auto;
+    width: 1200px; }
   .about-me-container aside {
     align-items: center;
     display: flex;
@@ -18,9 +21,12 @@
 .portfolio-container {
   height: 100vh; }
   .portfolio-container img {
-    height: 350px; }
+    height: 100%;
+    width: auto; }
   .portfolio-container .project {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    height: 33%;
+    width: 600px; }
 
 /*# sourceMappingURL=aboutme.css.map */
