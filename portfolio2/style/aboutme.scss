@@ -1,10 +1,28 @@
 .about-me-container {
     margin: 0 auto;
-    width: 1100px;
-    display: flex;
-    flex-direction: row;
+    width: 1200px;
+    height: 100vh;
+    font-family:'Raleway', sans-serif;
 
     img {
-        height: 400px;
+        height: 100vh;
+
+    }
+
+    .about-me {
+        display: flex;
+    }
+
+
+    aside {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 60px;
+
+        h1{
+            font-size: 54px;
+        }
     }
 }
