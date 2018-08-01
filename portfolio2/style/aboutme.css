@@ -12,9 +12,7 @@
   .about-me-container img {
     height: 100vh; }
   .about-me-container .about-me-wrapper {
-    display: flex;
-    margin: 0 auto;
-    width: 1200px; }
+    display: flex; }
   .about-me-container aside {
     align-items: center;
     display: flex;
@@ -24,9 +22,7 @@
       font-size: 54px; }
 
 .portfolio-container {
-  height: 100vh;
-  margin: 0 auto;
-  width: 1200px; }
+  height: 100vh; }
   .portfolio-container img {
     height: 100%;
     width: 33%; }
