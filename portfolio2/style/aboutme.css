@@ -21,25 +21,23 @@
     .about-me-container aside h1 {
       font-size: 54px; }
 
-.portfolio-container {
+.portfolio-wrapper {
   height: 100vh; }
-  .portfolio-container img {
-    height: 100%;
-    width: 33%; }
-  .portfolio-container .project {
+  .portfolio-wrapper ul {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    height: 33%;
-    padding: 10px;
-    box-sizing: border-box; }
-  .portfolio-container .project-information {
-    font-family: 'Raleway', sans-serif;
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
     justify-content: center;
-    text-align: center; }
-  .portfolio-container h1 {
-    font-weight: bold;
-    margin-bottom: 10px; }
+    align-items: center; }
+  .portfolio-wrapper li {
+    width: 305px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; }
+  .portfolio-wrapper a {
+    overflow: hidden; }
+  .portfolio-wrapper img {
+    min-width: 100%;
+    height: 258px; }
 
 /*# sourceMappingURL=aboutme.css.map */

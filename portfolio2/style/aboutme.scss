@@ -34,33 +34,30 @@
 
 
 
-.portfolio-container {
+.portfolio-wrapper{
     height: 100vh;
-    
-    img {
-        height:100%;
-        width: 33%; 
-    }
 
-
-    .project {
+    ul{
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        height: 33%;
-        padding: 10px;
-        box-sizing: border-box;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
     }
 
-    .project-information{
-        font-family:'Raleway', sans-serif;
+    li {
+        width: 305px;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
     }
 
-    h1 {
-        font-weight: bold;
-        margin-bottom: 10px;
+    a{
+        overflow: hidden;
+    }
+
+    img {
+        min-width: 100%;
+        height: 258px;
     }
 }
