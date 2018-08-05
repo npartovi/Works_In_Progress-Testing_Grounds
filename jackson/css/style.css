@@ -32,7 +32,6 @@ a {
     text-decoration: none !important; }
 
 p {
-  margin-bottom: 1.5em;
   color: white;
 }
 
@@ -578,7 +577,6 @@ body.offcanvas {
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
   position: relative;
-  background: #f2f3f7;
   padding: 1.5em;
   margin-left: 60px;
   -webkit-background-clip: padding-box;
@@ -607,7 +605,7 @@ body.offcanvas {
   font-weight: 500; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 a {
-  color: #000; }
+  color: white; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 span {
   -webkit-opacity: .4;
@@ -1454,7 +1452,7 @@ body.offcanvas {
 }
 
 .timeline-centered p {
-  color: black;
+  color: white;
 }
 
 .colorlib-text p {
@@ -1462,5 +1460,9 @@ body.offcanvas {
 }
 
 .colorlib-text a {
+  color: #6FC3DF;
+}
+
+.timeline-year {
   color: #6FC3DF;
 }
