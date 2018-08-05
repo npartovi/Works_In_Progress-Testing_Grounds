@@ -693,7 +693,7 @@ body.offcanvas {
       border-width: 30px 50px 0 50px;
       border-color: #2c98f0 transparent transparent transparent; }
     .services .icon i {
-      font-size: 30px;
+      font-size: 50px;
       color: #fff;
       z-index: 1;
       display: table-cell;
@@ -1475,13 +1475,37 @@ textarea.form-control::placeholder {
   color: white;
 }
 
-span.timeline-workname {
+.timeline-workname {
   color: white;
   font-style: italic;
   font-size: 16px;
+  margin-bottom: 25px;
   
 }
-
 .timeline-label h2 a {
   text-decoration: underline;
+}
+
+.timeline-label li {
+  color: white;
+}
+
+.year-color1 {
+  color: #2c98f0;
+}
+
+.year-color2 {
+  color: #ec5453;
+}
+
+.year-color3 {
+  color: #f9bf3f;
+}
+
+.year-color4 {
+  color: #a84cb8;
+}
+
+.year-color5 {
+  color: #2fa499;
 }
