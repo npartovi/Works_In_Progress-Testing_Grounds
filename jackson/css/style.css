@@ -994,7 +994,9 @@ body.offcanvas {
       transform: translate3d(0, -15px, 0);
       margin-bottom: 15px; }
       .project .desc h3 a {
-        color: #fff; }
+        color: #fff;
+        font-size: 40px;
+       }
     .project .desc span {
       display: block;
       color: rgba(255, 255, 255, 0.7);
