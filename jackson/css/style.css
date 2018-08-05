@@ -1474,3 +1474,14 @@ input.form-control::placeholder {
 textarea.form-control::placeholder {
   color: white;
 }
+
+span.timeline-workname {
+  color: white;
+  font-style: italic;
+  font-size: 16px;
+  
+}
+
+.timeline-label h2 a {
+  text-decoration: underline;
+}
