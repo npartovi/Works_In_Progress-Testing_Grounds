@@ -28,31 +28,29 @@ const SelectedLanguage = (props) => {
 
 const RepoGrid = (props) => {
 
-    return(
-        <div>
-        <ul>
-        {props.repos.map((repo, idx) => {
-                <li key={repo.name}>{repo.name}</li>
-                <div>
-                <div className="popular-rank"> #{idx + 1} </div>
-                </div>
-                <ul className="space-list-items">
-                    <li>
-                        <img
-                            className="avatar"
-                            src={repo.owner.avatar_url}
-                            alt={'Avatar for' + repo.owner.login} 
-                        />
-                    </li>
-                    <li><a href={repo.html_url}>{repo.name}</a></li>
-                    <li>@{repo.owner.login}</li>
-                    <li>{repo.stargazers_count} stars</li>
+    return (
+        <ul className='popular-list'>
+          {props.repos.map(function (repo, index) {
+            return (
+              <li key={repo.name} className='popular-item'>
+                <div className='popular-rank'>#{index + 1}</div>
+                <ul className='space-list-items'>
+                  <li>
+                    <img
+                      className='avatar'
+                      src={repo.owner.avatar_url}
+                      alt={'Avatar for ' + repo.owner.login}
+                    />
+                  </li>
+                  <li><a href={repo.html_url}>{repo.name}</a></li>
+                  <li>@{repo.owner.login}</li>
+                  <li>{repo.stargazers_count} stars</li>
                 </ul>
-            })
-        }
+              </li>
+            )
+          })}
         </ul>
-        </div>
-    )
+      )
 }
 
 
@@ -89,11 +87,13 @@ class Popular extends React.Component {
     render(){
         console.log(this.state)
         return(
-           <SelectedLanguage
-            selectedLanguage={this.state.selectedLanguage}
-            updateLanguage={this.updateLanguage}
-           />
-           <RepoGrid />
+            <div>
+            <SelectedLanguage
+                selectedLanguage={this.state.selectedLanguage}
+                updateLanguage={this.updateLanguage}
+            />
+            {!this.state.repos ? <p>Loading</p> : <RepoGrid repos={this.state.repos} /> }
+           </div>
         )
     }
 }

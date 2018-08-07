@@ -22,3 +22,23 @@ li {
     font-weight: bold;
     cursor: pointer;
 }
+
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+}
+
+ul.popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li.popular-item {
+    text-align: center;
+    margin: 20px;
+}
+
+.space-list-items {
+    margin-bottom: 7px;
+}
