@@ -115,3 +115,20 @@ form.column {
     font-size: 30px;
     font-weight: 200;
 }
+
+.column {
+    text-align: center;
+}
+
+.reset {
+    border: none;
+    background: transparent;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #d0021b;
+}
+
+.reset:hover {
+    cursor: pointer
+}

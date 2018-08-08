@@ -2,7 +2,8 @@ import React from 'react';
 import Popular from './popular';
 import Nav from './nav';
 import Home from './home';
-import Battle from './battle'
+import Battle from './battle';
+import Results from './results';
 
 const ReactRouter = require('react-router-dom')
 const Router = ReactRouter.BrowserRouter;
@@ -20,6 +21,7 @@ class App extends React.Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/popular" component={Popular} />
                 <Route exact path="/battle" component={Battle} />
+                <Route path="/battle/results" component={Results} />
                 <Route render={() =>{
                     return(<p>URL NOT FOUND</p>)
                 }} />
