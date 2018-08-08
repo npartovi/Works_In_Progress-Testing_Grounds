@@ -23,10 +23,11 @@ class PlayerInput extends React.Component{
     handleSubmit(event){
         event.preventDefault()
 
-        this.props.onSubmit(this.props.id, this.props.username)
+        this.props.onSubmit(this.props.id, this.state.username)
     }
 
     render(){
+        console.log(this.state.username)
         return(
             <form className="column" onSubmit={this.handleSubmit}> 
                 <label className="header" htmlFor="username">
@@ -69,14 +70,15 @@ class Battle extends React.Component {
     handleSubmit(id, username){
 
         this.setState(() => {
-            const newState = {}
-            newState[id + 'Name'] = username
-            newState[id + 'Player'] = 'https://github.com/' + username + '.png?size=200';
+            let newState = {}
+            newState[id + 'Name'] = username;
+            newState[id + 'Image'] = 'https://github.com/' + username + '.png?size=200';
             return newState
         })
     }
 
     render(){
+        console.log("battle", this.state)
         const playerOneName = this.state.playerOneName;
         const playerTwoName = this.state.playerTwoName;
 
