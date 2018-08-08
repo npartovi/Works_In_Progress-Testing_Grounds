@@ -132,3 +132,8 @@ form.column {
 .reset:hover {
     cursor: pointer
 }
+
+.loading-text {
+    text-align: center;
+    font-size: 35px;
+}

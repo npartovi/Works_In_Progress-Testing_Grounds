@@ -3,6 +3,7 @@ import queryString from 'query-string'
 import { battle } from '../util/api'
 import {Link} from 'react-router-dom'
 import PlayerPreview from './playerpreview'
+import Loading from './loading'
 
 
 
@@ -69,7 +70,7 @@ class Results extends React.Component {
         const winner = this.state.winner
 
         if(loading === true){
-            return (<p>Loading</p>)
+            return (<Loading />)
         }
 
         if(error){
