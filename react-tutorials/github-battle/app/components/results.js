@@ -2,14 +2,35 @@ import React from 'react'
 import queryString from 'query-string'
 import { battle } from '../util/api'
 import {Link} from 'react-router-dom'
+import PlayerPreview from './playerpreview'
 
+
+
+const Profile = (props) => {
+
+    const info = props.info
+    return(
+        <PlayerPreview avatar={info.avatar_url} username={info.login}>
+            <ul className="space-list-items">
+                {info.name && <li>{info.name}</li>}
+                {info.location && <li>{info.location}</li>}
+                {info.company && <li>{info.company}</li>}
+                <li>Followers: {info.followers}</li>
+                <li>Following: {info.public_repos}</li>
+                <li>Public Repos: {info.public_repos}</li>
+                {info.blog && <li><a href={info.blog}>{info.blog}</a></li>}
+            </ul>
+        </PlayerPreview>
+    )
+}
 
 const Player = (props) => {
 
     return(
         <div>
             <h1 className="header">{props.label}</h1>
-            <h3>{props.score}</h3>
+            <h3 style={{textAlign: 'center'}}>Score: {props.score}</h3>
+            <Profile info={props.profile} />
         </div>
     )
 }
