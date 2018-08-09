@@ -3,7 +3,7 @@ import {fetchPopularRepos} from '../util/api';
 import Loading from './loading'
 
 
-const SelectedLanguage = (props) => {
+const SelectedLanguage = ({selectedLanguage, onSelect}) => {
 
     const languages = ['All', 'Javascript', 'Ruby','Java', 'CSS', 'Python']
 
@@ -14,8 +14,8 @@ const SelectedLanguage = (props) => {
                 return (
                     <li
                         key={lang}
-                        onClick={props.updateLanguage.bind(null, lang)}
-                        style={lang === props.selectedLanguage ? {color: 'red'} : null}
+                        onClick={() => onSelect(lang)}
+                        style={lang === selectedLanguage ? {color: 'red'} : null}
                     >
                         {lang}
                     </li>
@@ -26,11 +26,11 @@ const SelectedLanguage = (props) => {
     )
 }
 
-const RepoGrid = (props) => {
+const RepoGrid = ({repos}) => {
 
     return (
         <ul className='popular-list'>
-          {props.repos.map(function (repo, index) {
+          {repos.map((repo, index) => {
             return (
               <li key={repo.name} className='popular-item'>
                 <div className='popular-rank'>#{index + 1}</div>
@@ -70,28 +70,26 @@ class Popular extends React.Component {
 
     updateLanguage(lang){
         
-        this.setState(function(){
-            return{
-                selectedLanguage: lang,
-                repos: null
-            }
+        this.setState({
+            selectedLanguage: lang,
+            repos: null
         })
 
         fetchPopularRepos(lang)
-            .then((repos) => {
-                this.setState({repos})
-            })
+            .then((repos) => this.setState({repos}))
     }
 
     render(){
-        console.log(this.state)
+
+        const { selectedLanguage, repos } = this.state
+        
         return(
             <div>
             <SelectedLanguage
-                selectedLanguage={this.state.selectedLanguage}
-                updateLanguage={this.updateLanguage}
+                selectedLanguage={selectedLanguage}
+                onSelect={this.updateLanguage}
             />
-            {!this.state.repos ? <Loading />: <RepoGrid repos={this.state.repos} /> }
+            {!repos ? <Loading /> : <RepoGrid repos={repos} /> }
            </div>
         )
     }
