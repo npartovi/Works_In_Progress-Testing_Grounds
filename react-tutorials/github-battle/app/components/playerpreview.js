@@ -1,17 +1,17 @@
 import React from 'react'
 
-const PlayerPreview = (props) => {
+const PlayerPreview = ({avatar, username, children}) => {
     return(
         <div>
             <div className="column">
                 <img 
                     className="avatar"
-                    src={props.avatar}
-                    alt={'Avatar for' + props.username}
+                    src={avatar}
+                    alt={'Avatar for' + username}
                 />
-                <h2>@{props.username}</h2>
+                <h2>@{username}</h2>
             </div>
-            {props.children}
+            {children}
         </div>
     )
 }

@@ -1,37 +1,37 @@
 import React from 'react'
 import queryString from 'query-string'
 import { battle } from '../util/api'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PlayerPreview from './playerpreview'
 import Loading from './loading'
 
 
 
-const Profile = (props) => {
+const Profile = ({info}) => {
 
-    const info = props.info
+    const {avatar_url, login, name, location, company, followers, following, public_repos, blog} = info
     return(
-        <PlayerPreview avatar={info.avatar_url} username={info.login}>
+        <PlayerPreview avatar={avatar_url} username={login}>
             <ul className="space-list-items">
-                {info.name && <li>{info.name}</li>}
-                {info.location && <li>{info.location}</li>}
-                {info.company && <li>{info.company}</li>}
-                <li>Followers: {info.followers}</li>
-                <li>Following: {info.public_repos}</li>
-                <li>Public Repos: {info.public_repos}</li>
-                {info.blog && <li><a href={info.blog}>{info.blog}</a></li>}
+                {info.name && <li>{name}</li>}
+                {location && <li>{location}</li>}
+                {company && <li>{company}</li>}
+                <li>Followers: {followers}</li>
+                <li>Following: {following}</li>
+                <li>Public Repos: {public_repos}</li>
+                {blog && <li><a href={blog}>{blog}</a></li>}
             </ul>
         </PlayerPreview>
     )
 }
 
-const Player = (props) => {
+const Player = ({label, score, profile}) => {
 
     return(
         <div>
-            <h1 className="header">{props.label}</h1>
-            <h3 style={{textAlign: 'center'}}>Score: {props.score}</h3>
-            <Profile info={props.profile} />
+            <h1 className="header">{label}</h1>
+            <h3 style={{textAlign: 'center'}}>Score: {score}</h3>
+            <Profile info={profile} />
         </div>
     )
 }
@@ -50,10 +50,10 @@ class Results extends React.Component {
     }
 
     componentDidMount(){
-        const players = queryString.parse(this.props.location.search)
+        const {playerOneName, playerTwoName } = queryString.parse(this.props.location.search)
         battle([
-            players.playerOneName,
-            players.playerTwoName
+            playerOneName,
+            playerTwoName
         ]).then((results) => {
             if(results === null){
                 this.setState({error: 'Looks like there was an error, check that both users exist', loading: false})
@@ -64,10 +64,7 @@ class Results extends React.Component {
     }
 
     render(){
-        const error = this.state.error
-        const loading = this.state.loading
-        const loser = this.state.loser
-        const winner = this.state.winner
+        const {error, loading, loser, winner } = this.state
 
         if(loading === true){
             return (<Loading />)
