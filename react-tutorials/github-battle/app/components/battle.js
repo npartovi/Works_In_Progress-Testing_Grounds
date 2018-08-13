@@ -22,7 +22,6 @@ class PlayerInput extends React.Component{
 
     handleSubmit(event){
         event.preventDefault()
-
         this.props.onSubmit(this.props.id, this.state.username)
     }
 

@@ -1,14 +1,10 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
 import Popular from './popular';
 import Nav from './nav';
 import Home from './home';
 import Battle from './battle';
 import Results from './results';
-
-const ReactRouter = require('react-router-dom')
-const Router = ReactRouter.BrowserRouter;
-const Route = ReactRouter.Route;
-const Switch = ReactRouter.Switch;
 
 class App extends React.Component {
 
