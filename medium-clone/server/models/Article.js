@@ -22,3 +22,17 @@ let ArticleSchema = new mongoose.Schema(
     ]
 
 )
+
+ArticleSchema.methods.clap = function(){
+    this.claps ++
+    return this.save()
+}
+
+ArticleSchema.methods.comment = function(c){
+    this.comments.push(c)
+    return this.save()
+}
+
+ArticleSchema.methods.addAuthor = function(author_id){
+    this.author = author_id
+}
