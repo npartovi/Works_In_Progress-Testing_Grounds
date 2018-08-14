@@ -8,6 +8,7 @@ const passport = require('passport')
 
 //Load Input Validation
 const validateRegisterInput = require('../../validation/register')
+const validateLoginInput = require("../../validation/login")
 
 
 //Load User Model
@@ -35,7 +36,8 @@ router.post('/register', (req, res) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
             if(user){
-                return res.status(400).json({email: 'Email already exists'})
+                errors.email = "Email Already Exists"
+                return res.status(400).json(errors)
             }else{
                 const avatar = gravatar.url(req.body.email, {
                     s: '200', // Size
@@ -70,6 +72,14 @@ router.post('/register', (req, res) => {
 // @access Public
 
 router.post('/login', (req, res) => {
+
+    const { errors, isValid } = validateLoginInput(req.body)
+
+    //Check Validation
+    if(!isValid){
+        return res.status(400).json(errors)
+    }
+
     const email = req.body.email
     const password = req.body.password
 
@@ -78,7 +88,8 @@ router.post('/login', (req, res) => {
         .then(user => {
             //Check for user
             if(!user){
-                return res.status(404).json({email: 'User not found'});
+                errors.email = "User not found"
+                return res.status(404).json(errors);
             }
 
             //Check Password
@@ -94,7 +105,8 @@ router.post('/login', (req, res) => {
                             res.json({success: true, token: 'Bearer ' + token})
                         });
                     }else{
-                        return res.status(400).json({password: 'Password incorrect'});
+                        errors.password = "Password incorrect"
+                        return res.status(400).json(errors);
                     }
                 })
         })
