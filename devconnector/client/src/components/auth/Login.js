@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import axios from 'axios'
+import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import {loginUser} from '../../actions/authActions'
+
 class Login extends Component {
     constructor(props){
         super(props)
@@ -15,6 +18,17 @@ class Login extends Component {
         this.onSubmit = this.onSubmit.bind(this)
     }
 
+    componentWillReceiveProps(nextProps){
+        
+        if(nextProps.auth.isAuthenticated){
+            this.props.history.push('/dashboard')
+        }
+
+        if(nextProps.errors){
+            this.setState({errors: nextProps.errors})
+        }
+    }
+
     onChange(e){
         this.setState({[e.target.name]: e.target.value})
     }
@@ -22,14 +36,12 @@ class Login extends Component {
     onSubmit(e){
         e.preventDefault()
 
-        const user = {
+        const userData = {
             email: this.state.email,
             password: this.state.password
         }
 
-        axios.post('/api/users/login', user)
-            .then(res => console.log(res.data))
-            .catch(err => this.setState({errors: err.response.data}))
+       this.props.loginUser(userData)
 
     }
 
@@ -63,7 +75,7 @@ class Login extends Component {
                             name="password" 
                             onChange={this.onChange} 
                         />
-                        {errors.email && (<div className="invalid-feedback">{errors.password}</div>)}
+                        {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
                         </div>
                         <input type="submit" className="btn btn-info btn-block mt-4" />
                     </form>
@@ -75,5 +87,16 @@ class Login extends Component {
     }
 }
 
+Login.propTypes = {
+    loginUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+}
 
-export default Login
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+})
+
+
+export default connect(mapStateToProps,{loginUser})(Login)
