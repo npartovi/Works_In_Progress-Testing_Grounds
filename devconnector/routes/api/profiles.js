@@ -103,7 +103,7 @@ router.get('/user/:user_id', (req, res) => {
 })
 
 
-// @route POST api/profiles
+// @route POST api/profile
 // @desc create/edit user profile
 // @access Private
 
