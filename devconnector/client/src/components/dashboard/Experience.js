@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {connect } from 'react-redux'
 import Moment from 'react-moment'
 import { deleteExperience } from '../../actions/profileActions'
 
-class Experience extends React.Component {
+class Experience extends Component {
 
 
     onDeleteClick(expId){
@@ -31,7 +31,7 @@ class Experience extends React.Component {
                             <th>Company</th>
                             <th>Title</th>
                             <th>Years</th>
-                            <th></th>
+
                         </tr>
                     </thead>
                     <tbody>                
