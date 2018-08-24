@@ -19,6 +19,7 @@ import AddExperience from './components/add-credentials/AddExperience'
 import AddEducation from './components/add-credentials/AddEducation'
 import Profiles from './components/profiles/Profiles'
 import Profile from './components/profile/Profile'
+import NotFound from './components/not-found/NotFound'
 
 import PrivateRoute from './components/common/PrivateRoute'
 
@@ -46,7 +47,6 @@ if(localStorage.jwtToken){
     window.location.href = "/login"
   }
 }
-
 
 
 class App extends Component {
@@ -77,7 +77,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/add-education" component={AddEducation} />
             </Switch>
-
+            <Route exact path="/not-found" component={NotFound} />
           </div>
           <Footer />
         </div>

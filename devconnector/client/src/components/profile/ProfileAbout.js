@@ -5,8 +5,6 @@ import isEmpty from '../../validation/is-empty'
 
 class ProfileAbout extends Component {
 
-    
-
     render(){
 
         const { profile } = this.props
@@ -39,6 +37,10 @@ class ProfileAbout extends Component {
             </div>
         )
     }
+}
+
+ProfileAbout.propTypes = {
+    profile: PropTypes.object.isRequired
 }
 
 export default ProfileAbout
