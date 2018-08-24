@@ -8,6 +8,7 @@ import InputGroup from '../common/InputGroup'
 import SelectListGroup from '../common/SelectListGroup'
 import { createProfile, getCurrentProfile } from '../../actions/profileActions'
 import isEmpty from '../../validation/is-empty'
+import {Link} from 'react-router-dom'
 
 
 class CreateProfile extends Component {
@@ -57,10 +58,10 @@ class CreateProfile extends Component {
 
             profile.social = !isEmpty(profile.social) ? profile.social : {}
             profile.twitter = !isEmpty(profile.social.twitter) ? profile.social.twitter : ""
-            profile.social = !isEmpty(profile.social.facebook) ? profile.social.facebook : ""
-            profile.social = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : ""
-            profile.social = !isEmpty(profile.social.instagram) ? profile.social.instagram : ""
-            profile.social = !isEmpty(profile.social.youtube) ? profile.social.youtube : ""
+            profile.facebook = !isEmpty(profile.social.facebook) ? profile.social.facebook : ""
+            profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : ""
+            profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : ""
+            profile.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : ""
 
             //Set component fields state
             this.setState({
@@ -75,7 +76,8 @@ class CreateProfile extends Component {
                 twitter: profile.twitter,
                 facebook: profile.facebook,
                 linkedin: profile.linkedin,
-                youtube: profile.youtube
+                youtube: profile.youtube,
+                instagram: profile.instagram
             })
         }
     }
@@ -181,6 +183,7 @@ class CreateProfile extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
+                            <Link to="/dashboard" className="btn btn-light">Go Back</Link>
                             <h1 className="display-4 text-center">Edit Your Profile</h1>
                             <small className="d-block pb-3">* = required fields</small>
                             <form onSubmit={this.onSubmit}>
