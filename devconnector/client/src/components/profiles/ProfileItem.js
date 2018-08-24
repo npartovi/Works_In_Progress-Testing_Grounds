@@ -8,7 +8,6 @@ class ProfileItem extends Component {
 
         const { profile } = this.props
 
-
         return(
             <div className="card card-bdy bg-light mb-3">
                 <div className="row">

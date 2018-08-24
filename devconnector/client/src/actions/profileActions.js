@@ -109,9 +109,25 @@ export const getProfiles = () => dispatch => {
         })
 }
 
+// Get profile based on handle id
 
-
-
+export const getProfileByHandle = (handle) => dispatch => {
+    dispatch(setProfileLoading())
+    axios
+        .get(`/api/profile/handle/${handle}`)
+        .then(res => {
+            dispatch({
+                type: GET_PROFILE,
+                payload: res.data
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type: GET_ERRORS,
+                payload: null
+            })
+        })
+}
 
 // DELETE account and profile
 
@@ -133,6 +149,8 @@ export const deleteAccount = () => dispatch => {
             )
     }
 }
+
+
 
 
 //PROFILE LOADING
