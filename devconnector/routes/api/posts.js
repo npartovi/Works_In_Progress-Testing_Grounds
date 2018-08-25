@@ -71,7 +71,7 @@ router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res)
                 .then(post => {
                     //Check for post owner
                     if(post.user.toString() !== req.user.id){
-                        return res.status(401).json({noauthorized: 'User not authorized'})
+                        return res.status(401).json({notauthorized: 'User not authorized'})
                     }
 
                     // Delete
