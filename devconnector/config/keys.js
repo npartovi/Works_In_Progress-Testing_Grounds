@@ -1,4 +1,6 @@
-module.exports = {
-    mongoURI: 'mongodb://npartovi:Emerica!23@ds221242.mlab.com:21242/musicsocialconnector',
-    secretOrKey: 'secret'
+if(process.env.NODE_EVN === "production"){
+    module.exports = require('./keys_prod')
+}else {
+    module.exports = require('./keys_dev')
 }
+
