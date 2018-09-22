@@ -125,3 +125,55 @@ document.addEventListener('DOMContentLoaded',() => {
        }
     });
 })
+
+
+// function parseOperatingHours(hours) {
+    
+//     let results = []
+    
+    
+//     for(let i = 0; i < hours.length; i++){
+        
+//         let dayHolder = []
+//         hours[i].daysBitsArray.forEach((el, idx) => {
+//             if(el === true){
+//                 dayHolder.push(dayArray[idx])
+//             }else{
+//                 dayHolder.push("")
+//             }
+//         })
+        
+//         let start = ""
+//         let last = ""
+//         let dayString = ""
+        
+//         console.log(dayHolder)
+        
+//         for(let j = 0 ; j < dayHolder.length; j++){
+            
+//             if(dayHolder[j] === "" && start === ""){
+//                 continue
+//             }
+//             if(dayHolder[j] && start === "" ){
+//                 if(j === dayHolder.length - 1){
+//                     start = dayHolder[j]
+//                     dayString += start
+//                 }else{
+//                     start = dayHolder[j]
+//                 }
+//             }else if(dayHolder[j] === ""){
+//                 if(dayHolder[j - 1] === start){
+//                     dayString += start
+//                     start = ""
+//                 }else{
+//                     last = dayHolder[j - 1]
+//                     dayString += start + "-" + last
+//                     start = ""
+//                 }
+//             }
+//         }
+        
+//     }
+    
+    
+// };
