@@ -7,6 +7,6 @@
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-.video-list-item-container {
-    flex: 0 0 auto;
+.video-list-item {
+    margin: 0px 10px;
 }
