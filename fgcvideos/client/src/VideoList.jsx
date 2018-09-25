@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import youtubeSearch from 'youtube-api-v3-search'
 import './App.css';
+import VideoListItem from './VideoListItem'
 // import _ from 'lodash'
 const API_KEY = 'AIzaSyBVOWDJTWMTdqWhkoguKVK1B9t3VWS68hA';
 
@@ -38,7 +39,9 @@ class VideoList extends Component {
     render(){
         console.log(this.state)
         return(
-            <h1>Hello</h1>
+            <div>
+                <VideoListItem />
+            </div>
         )
     }
 }
