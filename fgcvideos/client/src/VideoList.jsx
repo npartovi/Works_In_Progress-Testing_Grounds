@@ -37,10 +37,15 @@ class VideoList extends Component {
 
 
     render(){
-        console.log(this.state)
+        const { videos } = this.state
+
+        const videoListRender = videos.map((video, idx) => (
+            <VideoListItem key={idx} video={video} />
+        ))
+
         return(
             <div>
-                <VideoListItem />
+                {videoListRender}
             </div>
         )
     }
