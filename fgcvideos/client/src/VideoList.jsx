@@ -12,6 +12,9 @@ class VideoList extends Component {
             videos: []
         }
 
+    }
+
+    componentDidMount(){
         this.videoSearch()
     }
 

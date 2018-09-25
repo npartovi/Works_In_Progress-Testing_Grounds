@@ -1,16 +1,26 @@
 import React, {Component} from 'react'
+import VideoModal from './VideoModal'
 
 
 class VideoListItem extends Component {
     constructor(props){
         super(props)
 
-        this.onClick = this.onClick.bind(this)
+        this.state = {
+            modalOpen: false
+        }
+
+        this.showModal = this.showModal.bind(this)
+        this.hideModal = this.hideModal.bind(this)
     }
     
 
-    onClick(e){
-        console.log(e.target)
+    showModal(e){
+        this.setState({modalOpen: true})
+    }
+
+    hideModal(e){
+        this.setState({modalOpen: false})
     }
 
     render(){
@@ -20,8 +30,9 @@ class VideoListItem extends Component {
         const videoUrl = `https://www.youtube.com/embed/${videoId}`
 
         return(
-            <div onClick={this.onClick} className="video-list-item">
-                <img src={mediumThumbnail} />
+            <div  className="video-list-item">
+                <img onClick={this.showModal} src={mediumThumbnail}/>
+                <VideoModal show={this.state.modalOpen} hideModal={this.hideModal} videoUrl={videoUrl} />
             </div>
         )
     }
