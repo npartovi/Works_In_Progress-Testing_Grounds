@@ -1,4 +1,12 @@
 .video-list-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.video-list-item-container {
+    flex: 0 0 auto;
 }

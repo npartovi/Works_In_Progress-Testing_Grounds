@@ -45,7 +45,7 @@ class VideoList extends Component {
         ))
 
         return(
-            <div className="video-list-container">
+            <div className="video-list-container scroll">
                 {videoListRender}
             </div>
         )
