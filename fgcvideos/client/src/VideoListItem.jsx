@@ -32,7 +32,7 @@ class VideoListItem extends Component {
         return(
             <div  className="video-list-item">
                 <img onClick={this.showModal} src={mediumThumbnail}/>
-                <VideoModal show={this.state.modalOpen} hideModal={this.hideModal} videoUrl={videoUrl} />
+                <VideoModal show={this.state.modalOpen} hideModal={this.hideModal} videoId={videoId} />
             </div>
         )
     }
