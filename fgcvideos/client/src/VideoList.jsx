@@ -12,10 +12,6 @@ class VideoList extends Component {
             videos: []
         }
 
-        this.videoSearch = this.videoSearch.bind(this)
-    }
-
-    componentDidMount(){
         this.videoSearch()
     }
 

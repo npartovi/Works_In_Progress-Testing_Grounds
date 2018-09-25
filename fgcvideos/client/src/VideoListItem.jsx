@@ -1,25 +1,30 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 
-const VideoListItem = ({video}) => {
-    console.log(video)
-    const mediumThumbnail = video.snippet.thumbnails.medium.url
-    const highThumbnail = video.snippet.thumbnails.high.url
-    const videoId = video.id.videoId
-    const videoUrl = `https://www.youtube.com/embed/${videoId}`;
+class VideoListItem extends Component {
+    constructor(props){
+        super(props)
 
-    return(
-        <div className="video-list-item">
-            <a href={videoUrl}>
-                <img 
-                    src={mediumThumbnail}
-                    // onMouseOver={(e) => e.currentTarget.src = highThumbnail}
-                    // onMouseOut={(e) => e.currentTarget.src = mediumThumbnail} 
-                />
-                <p>{video.snippet.title}</p>
-            </a>
-        </div>
-    )
+        this.onClick = this.onClick.bind(this)
+    }
+    
+
+    onClick(e){
+        console.log(e.target)
+    }
+
+    render(){
+        const { video } = this.props
+        const mediumThumbnail = video.snippet.thumbnails.medium.url
+        const videoId = video.id.videoId
+        const videoUrl = `https://www.youtube.com/embed/${videoId}`
+
+        return(
+            <div onClick={this.onClick} className="video-list-item">
+                <img src={mediumThumbnail} />
+            </div>
+        )
+    }
 }
 
 export default VideoListItem
