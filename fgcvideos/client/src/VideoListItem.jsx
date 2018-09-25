@@ -13,8 +13,8 @@ const VideoListItem = ({video}) => {
             <a href={videoUrl}>
                 <img 
                     src={mediumThumbnail}
-                    onMouseOver={(e) => e.currentTarget.src = highThumbnail}
-                    onMouseOut={(e) => e.currentTarget.src = mediumThumbnail} 
+                    // onMouseOver={(e) => e.currentTarget.src = highThumbnail}
+                    // onMouseOut={(e) => e.currentTarget.src = mediumThumbnail} 
                 />
                 <p>{video.snippet.title}</p>
             </a>

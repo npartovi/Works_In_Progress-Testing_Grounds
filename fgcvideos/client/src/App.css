@@ -9,4 +9,12 @@
 
 .video-list-item {
     margin: 0px 10px;
+    transition: transform .2s;
+}
+
+.video-list-item:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
 }
