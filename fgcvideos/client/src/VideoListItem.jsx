@@ -6,9 +6,9 @@ const VideoListItem = ({video}) => {
     const imgUrl = video.snippet.thumbnails.medium.url
 
     return(
-        <div>
+        <div class="video-list-item-container">
             <img src={imgUrl} />
-            
+            <p>{video.snippet.title}</p>
         </div>
     )
 }

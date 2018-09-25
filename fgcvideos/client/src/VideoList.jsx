@@ -9,7 +9,6 @@ class VideoList extends Component {
         super(props)
 
         this.state = {
-            term: "third strike",
             videos: []
         }
 
@@ -17,15 +16,17 @@ class VideoList extends Component {
     }
 
     componentDidMount(){
-        this.videoSearch(this.state.term)
+        this.videoSearch()
     }
 
-    videoSearch(term){    
+    videoSearch(){    
+        const { id } = this.props
+
         const options = {
-          q: term,
           part: 'snippet',
           type: "video",
-          channelId: "UCIq8ow2OP3mRqWDVm7aRXCA",
+          channelId: id,
+          order: "date",
           maxResults: 50,
         }
     
@@ -35,9 +36,8 @@ class VideoList extends Component {
           })
       }
 
-
-
     render(){
+
         const { videos } = this.state
 
         const videoListRender = videos.map((video, idx) => (
@@ -45,7 +45,7 @@ class VideoList extends Component {
         ))
 
         return(
-            <div>
+            <div className="video-list-container">
                 {videoListRender}
             </div>
         )

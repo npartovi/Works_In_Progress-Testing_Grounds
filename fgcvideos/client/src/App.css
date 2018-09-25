@@ -1,0 +1,4 @@
+.video-list-container {
+    display: flex;
+    flex-direction: row;
+}

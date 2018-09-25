@@ -8,8 +8,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <div className="streetFighter">
-            <VideoList />
+          <div className="game-newton">
+            <VideoList id="UCIq8ow2OP3mRqWDVm7aRXCA" />
+          </div>
+          <div className="the-beast">
+            <VideoList id="UCT-WkUmMBrqDTXXAK4BOCbw" />
           </div>
 
       </div>
