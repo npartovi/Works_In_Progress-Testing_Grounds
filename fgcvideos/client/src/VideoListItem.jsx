@@ -2,11 +2,13 @@ import React from 'react'
 
 
 const VideoListItem = ({video}) => {
+    console.log(video)
+    const imgUrl = video.snippet.thumbnails.medium.url
 
-    const imgUrl = video.snippet.thumbnails.default.url
     return(
         <div>
             <img src={imgUrl} />
+            
         </div>
     )
 }

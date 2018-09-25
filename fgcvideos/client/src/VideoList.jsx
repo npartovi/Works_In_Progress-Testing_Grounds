@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 import youtubeSearch from 'youtube-api-v3-search'
 import './App.css';
 import VideoListItem from './VideoListItem'
-// import _ from 'lodash'
-const API_KEY = 'AIzaSyBVOWDJTWMTdqWhkoguKVK1B9t3VWS68hA';
+import keys from './config'
 
 class VideoList extends Component {
     constructor(props){
@@ -25,10 +24,12 @@ class VideoList extends Component {
         const options = {
           q: term,
           part: 'snippet',
-          type: "video"
+          type: "video",
+          channelId: "UCIq8ow2OP3mRqWDVm7aRXCA",
+          maxResults: 50,
         }
     
-        youtubeSearch(API_KEY, options)
+        youtubeSearch(keys.youtubeAPIKey, options)
           .then((res) => {
             this.setState({videos: res.items})
           })
