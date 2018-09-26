@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import VideoList from './VideoList'
 import Jumbotron from './components/layout/Jumbotron'
+import NavBar from './components/layout/NavBar'
 
 
 
@@ -9,6 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+          <NavBar />
           <Jumbotron />
           <div className="row">
             <h1>Game Newton</h1>

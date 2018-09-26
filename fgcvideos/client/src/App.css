@@ -194,7 +194,20 @@ body {
 
 
 .jumbotron {
-  background: url('./images/arcade1.jpg');
+  background: url('./images/japanarcade.jpg');
   height: 500px;
-  background-size: cover;
+  background-size: cover; 
+}
+
+nav {
+  color: white;
+}
+
+
+.logo {
+  width: 100px;
+}
+
+.logo img {
+  width: 100%
 }

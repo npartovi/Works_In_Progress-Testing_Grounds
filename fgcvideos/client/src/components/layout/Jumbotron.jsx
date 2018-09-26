@@ -7,7 +7,7 @@ class Jumbotron extends Component {
         return(
             <div className="jumbotron">
                 <div className="jumbotron-container">
-                    This will be the jumbotron
+                    
                 </div>
             </div>
         )
