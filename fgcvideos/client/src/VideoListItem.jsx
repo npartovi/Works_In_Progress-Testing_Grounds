@@ -35,8 +35,8 @@ class VideoListItem extends Component {
             <React.Fragment>
                 <div onClick={this.showModal} className="video-list-item">
                     <img src={mediumThumbnail}/>
-                    <div class="tile__details">
-                        <div class="tile__title">
+                    <div className="tile__details">
+                        <div className="tile__title">
                             {title}
                         </div>
                     </div>
