@@ -30,10 +30,12 @@ class VideoListItem extends Component {
         const videoId = video.id.videoId
 
         return(
-            <div onClick={this.showModal} className="video-list-item">
-                <img src={mediumThumbnail}/>
+            <React.Fragment>
+                <div onClick={this.showModal} className="video-list-item">
+                    <img src={mediumThumbnail}/>
+                </div>
                 <VideoModal show={this.state.modalOpen} hideModal={this.hideModal} videoId={videoId} />
-            </div>
+            </React.Fragment>
         )
     }
 }
