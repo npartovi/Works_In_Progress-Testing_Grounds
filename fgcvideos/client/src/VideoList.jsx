@@ -37,6 +37,7 @@ class VideoList extends Component {
 
     render(){
 
+        
         const { videos } = this.state
 
         const videoListRender = videos.map((video, idx) => (

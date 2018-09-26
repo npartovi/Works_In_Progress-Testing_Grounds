@@ -26,7 +26,7 @@ class VideoListItem extends Component {
 
     render(){
         const { video } = this.props
-        const mediumThumbnail = video.snippet.thumbnails.medium.url
+        const mediumThumbnail = video.snippet.thumbnails.high.url
         const title = video.snippet.title
         const videoId = video.id.videoId
         
