@@ -44,7 +44,7 @@ class VideoList extends Component {
         ))
 
         return(
-            <div className="video-list-container scroll">
+            <div className="row__inner">
                 {videoListRender}
             </div>
         )

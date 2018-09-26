@@ -20,6 +20,7 @@ class VideoListItem extends Component {
     }
 
     hideModal(e){
+        
         this.setState({modalOpen: false})
     }
 
@@ -27,7 +28,6 @@ class VideoListItem extends Component {
         const { video } = this.props
         const mediumThumbnail = video.snippet.thumbnails.medium.url
         const videoId = video.id.videoId
-        const videoUrl = `https://www.youtube.com/embed/${videoId}`
 
         return(
             <div  className="video-list-item">
