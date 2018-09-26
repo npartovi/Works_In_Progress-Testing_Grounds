@@ -11,7 +11,6 @@ class VideoList extends Component {
         this.state = {
             videos: []
         }
-
     }
 
     componentDidMount(){

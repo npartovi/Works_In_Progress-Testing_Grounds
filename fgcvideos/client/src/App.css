@@ -189,3 +189,12 @@ body {
     background: url("//i.imgur.com/TxzC70f.png") no-repeat;
     cursor: pointer;
 }
+
+
+
+
+.jumbotron {
+  background: url('./images/arcade1.jpg');
+  height: 500px;
+  background-size: cover;
+}
