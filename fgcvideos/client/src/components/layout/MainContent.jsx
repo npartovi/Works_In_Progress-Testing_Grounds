@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
 import VideoList from '../video/VideoList'
+import channelList from '../../util/channel-id-list'
 
 class MainContent extends Component {
 
     render(){
+
+        
+
+
+
+
+        const mainContent = channelList.map((channel, idx) => (
+            <div key={idx} className="row">
+                <h1>{channel.name}</h1>
+                <VideoList id={channel.id} />
+            </div>
+        ))
+
+
         return(
             <div>
-                <div className="row">
-                    <h1>Game Newton</h1>
-                    <VideoList id="UCIq8ow2OP3mRqWDVm7aRXCA" />
-                </div>
-                <div className="row">
-                    <h1>The Beast</h1>
-                    <VideoList id="UCT-WkUmMBrqDTXXAK4BOCbw" />
-                </div>
-            {/* <div className="row">
-                <h1>A-Cho</h1>
-                <VideoList id="UCCfnriDcUslGMUMX4Ctkyjg" />
-            </div> */}
-            {/* <div className="row">
-                <h1>YogaFlame24</h1>
-                <VideoList id="UC1UzB_b7NSxoRjhZZDicuqw" />
-            </div> */}
+                {mainContent}
           </div>
         )
     }
