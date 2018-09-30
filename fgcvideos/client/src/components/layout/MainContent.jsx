@@ -15,7 +15,6 @@ class MainContent extends Component {
     }
 
     componentDidMount(){
-        // this.test()
         youtubeAPI()
     }
 
@@ -35,6 +34,7 @@ class MainContent extends Component {
 
             youtubeSearch(keys.youtubeAPIKey, options)
                 .then((res) => {
+                    console.log(res)
                     newObject = res.items
                     newState.allVideos.push(newObject)
                     this.setState(newState)
