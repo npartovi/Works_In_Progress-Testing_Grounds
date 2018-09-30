@@ -6,7 +6,7 @@ const channelList = [
     {
         name: "The Beast" ,
         id: "UCT-WkUmMBrqDTXXAK4BOCbw"
-    }
+    },
     // {
     //     name: "A-Cho",
     //     id: "UCCfnriDcUslGMUMX4Ctkyjg",

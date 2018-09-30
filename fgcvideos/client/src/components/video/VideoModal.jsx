@@ -3,10 +3,6 @@ import YTEmbedLazyLoad from '../../util/youtube-embed-lazy-load'
 
 class VideoModal extends Component {
 
-    constructor(props){
-        super(props)
-    }
-
     componentDidMount(){
         YTEmbedLazyLoad()
     }
