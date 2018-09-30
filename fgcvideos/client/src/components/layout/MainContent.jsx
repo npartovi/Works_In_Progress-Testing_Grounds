@@ -3,6 +3,7 @@ import VideoList from '../video/VideoList'
 import channelList from '../../util/channel-id-list'
 import keys from '../../config'
 import youtubeSearch from 'youtube-api-v3-search'
+import youtubeAPI from '../../util/youtubeAPI'
 
 class MainContent extends Component {
     constructor(props){
@@ -14,7 +15,8 @@ class MainContent extends Component {
     }
 
     componentDidMount(){
-        this.test()
+        // this.test()
+        youtubeAPI()
     }
 
     test(){
@@ -43,8 +45,8 @@ class MainContent extends Component {
     render(){
 
         
-        const mainContent = this.state.allVideos.map((videos) => (
-            <VideoList videos={videos} />
+        const mainContent = this.state.allVideos.map((videos, idx) => (
+            <VideoList key={idx} videos={videos} />
         ))
 
         return(

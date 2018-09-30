@@ -13,7 +13,6 @@ class VideoList extends Component {
         }
         
         const { videos } = this.props
-        console.log(videos)
 
         const videoListRender = videos.map((video, idx) => (
             <VideoListItem key={idx} video={video} />
