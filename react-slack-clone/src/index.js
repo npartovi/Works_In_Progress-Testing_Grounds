@@ -6,14 +6,23 @@ import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
 import registerServiceWorker from './registerServiceWorker';
 import firebase from './firebase'
+import { setUser }from './actions/index'
 
 import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom'
+
+import { createStore } from 'redux'
+import {Provider, connect} from 'react-redux'
+import {composeWithDevTools} from 'redux-devtools-extension'
+import rootReducer from './reducers/index'
+
+const store = createStore(rootReducer, composeWithDevTools())
 
 class Root extends React.Component {
 
     componentDidMount(){
         firebase.auth().onAuthStateChanged(user => {
             if(user){
+                this.props.setUser(user)
                 this.props.history.push('/')
             }
         })
@@ -31,7 +40,7 @@ class Root extends React.Component {
 }
 
 
-const RootWithAuth = withRouter(Root)
+const RootWithAuth = withRouter(connect(null, {setUser})(Root))
 
-ReactDOM.render(<Router><RootWithAuth/></Router>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><Router><RootWithAuth/></Router></Provider>, document.getElementById('root'));
 registerServiceWorker();
