@@ -145,6 +145,8 @@ class MessageForm extends Component {
 
     }
 
+    
+
     render(){
 
         const {errors, message, loading, modal, uploadState, percentUploaded } = this.state
@@ -176,6 +178,7 @@ class MessageForm extends Component {
                     />
                     <Button 
                         color="teal"
+                        disabled={uploadState === 'uploading'}
                         onClick={this.openModal}
                         content="Upload Media"
                         labelPosition="right"
