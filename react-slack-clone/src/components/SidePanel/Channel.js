@@ -137,6 +137,7 @@ class Channel extends Component{
             }
         })
 
+        console.log(count)
         if(count > 0) return count
     }
 
