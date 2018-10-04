@@ -6,7 +6,7 @@ body,
     padding: 1em;
 }
 
-/* Messages */
+/* Messagesform */
 
 .messages {
     height: 440px;
@@ -20,4 +20,12 @@ body,
     left: 0;
     right: 1em;
     z-index: 200;
+}
+
+
+/* message */
+
+.message__self {
+    border-left: 2px solid orange;
+    padding-left: 8px;
 }

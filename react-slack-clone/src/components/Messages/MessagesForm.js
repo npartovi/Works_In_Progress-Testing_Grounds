@@ -25,7 +25,7 @@ class MessageForm extends Component {
             user: {
                 id: this.state.user.uid,
                 name: this.state.user.displayName,
-                avatar: this.state.message
+                avatar: this.state.user.photoURL
             },
             content: this.state.message
         }
