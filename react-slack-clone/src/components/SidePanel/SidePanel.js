@@ -20,7 +20,7 @@ class SidePanel extends Component{
             >
                 <UserPanel currentUser={currentUser} />
                 <Channel currentUser={currentUser} />
-                <DirectMessages />
+                <DirectMessages currentUser={currentUser} />
             </Menu>
         )
     }
