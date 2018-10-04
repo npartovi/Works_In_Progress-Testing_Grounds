@@ -112,7 +112,7 @@ class Messages extends Component{
                     numUniqueUsers={numUniqueUsers}
                     handleSearchChange={this.handleSearchChange}
                     searchLoading={searchLoading}
-                    isPrivateChannel={privateChannel}
+                    privateChannel={privateChannel}
                     getMessagesRef={this.getMessagesRef}
                 />
 
@@ -122,7 +122,7 @@ class Messages extends Component{
                     </Comment.Group>
                 </Segment>
 
-                <MessageForm messagesRef={messagesRef} currentChannel={channel} currentUser={user} isPrivateChannel={privateChannel} />
+                <MessageForm messagesRef={messagesRef} currentChannel={channel} currentUser={user} privateChannel={privateChannel} getMessagesRef={this.getMessagesRef} />
             </React.Fragment>
         )
     }
