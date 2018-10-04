@@ -17,11 +17,13 @@ class FileModal extends Component {
         const file = e.target.files[0]
         if(file){
             this.setState({file})
+
         }
         
     }
 
     sendFile = () => {
+    
         const { file } = this.state
         const { uploadFile, closeModal } = this.props
 
