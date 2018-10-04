@@ -20,6 +20,8 @@ class MessageForm extends Component {
     openModal = () => this.setState({modal: true})
 
     closeModal = () => this.setState({modal: false})
+    
+        
 
     handleChange = (e) => {
         this.setState({[e.target.name] : e.target.value})
@@ -66,6 +68,10 @@ class MessageForm extends Component {
         }
     }
 
+    uploadFile = (file, metadata) => {
+        console.log(file, metadata)
+    }
+
     render(){
 
         const {errors, message, loading, modal} = this.state
@@ -105,6 +111,7 @@ class MessageForm extends Component {
                     <FileModal 
                         modal={modal} 
                         closeModal={this.closeModal}
+                        uploadFile={this.uploadFile}
                     />
                 </Button.Group>
             </Segment>

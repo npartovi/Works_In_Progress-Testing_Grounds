@@ -11,7 +11,6 @@ const timeFromNow = (timestamp) => moment(timestamp).fromNow();
 
 const Message = ({message, user}) => {
 
-    console.log(message)
     return(
     <Comment>
         <Comment.Avatar src={message.user.avatar} />
