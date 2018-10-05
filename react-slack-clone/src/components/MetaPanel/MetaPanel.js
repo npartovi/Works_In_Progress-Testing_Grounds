@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Segment, Accordion, Header, Icon } from 'semantic-ui-react'
+import { Segment, Accordion, Header, Icon, Image, List } from 'semantic-ui-react'
 
 class MetaPanel extends Component{
     constructor(props){
@@ -7,7 +7,8 @@ class MetaPanel extends Component{
 
         this.state = {
             activeIndex: 0,
-            privateChannel: this.props.isPrivateChannel
+            privateChannel: this.props.isPrivateChannel,
+            channel: this.props.currentChannel
         }
     }
 
@@ -19,21 +20,37 @@ class MetaPanel extends Component{
         this.setState({activeIndex: newIndex})
     }
 
+    displayTopPosters = (posts) => (
+
+        Object.entries(posts)
+            .sort((a, b) => b[1] - a[1])
+            .map(([key, val], i) => (
+                <List.Item key={i}>
+                    <Image avatar src={val.avatar} />
+                    <List.Content>
+                        <List.Header as="a">{key}</List.Header>
+                        <List.Description>{val.count} posts</List.Description>
+                    </List.Content>
+                </List.Item>
+            ))
+    )
+    
+
     render(){
 
-        const { activeIndex, privateChannel } = this.state
+        const { activeIndex, privateChannel, channel } = this.state
+        const { userPosts } = this.props
 
-        if(privateChannel){
-            return null
-        }
+        if(privateChannel) return null
+        
 
         return(
-            <Segment>
+            <Segment loading={!channel}>
                 <Header
                     as="h3"
                     attached="top"
                 >
-                About # Channel
+                About # {channel && channel.name}
                 </Header>
                 <Accordion styled attached="true">
                     <Accordion.Title
@@ -46,7 +63,7 @@ class MetaPanel extends Component{
                         Channel Details
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 0}>
-                        details
+                        {channel && channel.details}
                     </Accordion.Content>
 
                     <Accordion.Title
@@ -59,7 +76,9 @@ class MetaPanel extends Component{
                         Top Posters
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 1}>
-                        posters
+                        <List>
+                            {userPosts && this.displayTopPosters(userPosts)}
+                        </List>
                     </Accordion.Content>
 
                     <Accordion.Title
@@ -72,7 +91,11 @@ class MetaPanel extends Component{
                         Created By
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex === 2}>
-                        creator
+
+                        <Header as="h3">
+                            <Image circular src={channel && channel.createdBy.avatar} />
+                            {channel && channel.createdBy.name}
+                        </Header>
                     </Accordion.Content>
                 </Accordion>
             </Segment>
