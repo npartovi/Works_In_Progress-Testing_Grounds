@@ -11,7 +11,7 @@ import './App.css';
 
 const App = ({currentUser, currentChannel, isPrivateChannel, userPosts}) => (
   <Grid columns="equal" className="app" style={{background: '#eee'}}>
-    <ColorPanel />
+    <ColorPanel key={currentUser && currentUser.name} currentUser={currentUser} />
     <SidePanel 
       key={currentUser && currentUser.id}
       currentUser={currentUser} 
@@ -27,7 +27,7 @@ const App = ({currentUser, currentChannel, isPrivateChannel, userPosts}) => (
     </Grid.Column>
 
     <Grid.Column width={4}>
-      <MetaPanel isPrivateChannel={isPrivateChannel} key={currentChannel && currentChannel.id} currentChannel={currentChannel} userPosts={userPosts} />
+      <MetaPanel isPrivateChannel={isPrivateChannel} key={currentChannel && currentChannel.name} currentChannel={currentChannel} userPosts={userPosts} />
     </Grid.Column>
 
   </Grid>
