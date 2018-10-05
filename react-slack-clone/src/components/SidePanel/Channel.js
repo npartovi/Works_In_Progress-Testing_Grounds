@@ -52,7 +52,7 @@ class Channel extends Component{
     handleNotifications = (channelId, currentChannelId, notifications, snap) => {
         let lastTotal = 0
 
-        let index = notifications.findIndex(notifications => notifications.id === channelId)
+        let index = notifications.findIndex(notification => notification.id === channelId)
 
         if(index !== -1){
             if(channelId !== currentChannelId){
@@ -112,6 +112,7 @@ class Channel extends Component{
 
     changeChannel = channel => {
         this.setActiveChannel(channel);
+        this.clearNotifications()
         this.props.setCurrentChannel(channel)
         this.props.setPrivateChannel(false)
         this.setState({channel})
@@ -130,14 +131,13 @@ class Channel extends Component{
 
     getNotificationCount = (channel) => {
         let count = 0
-
+        
         this.state.notifications.forEach(notification => {
             if(notification.id === channel.id){
                 count = notification.count
             }
         })
 
-        console.log(count)
         if(count > 0) return count
     }
 
