@@ -36,6 +36,14 @@ class ColorPanel extends Component{
                 this.setState({userColors})
             })
     }
+
+    componentWillUnMount(){
+        this.removeListener()
+    }
+
+    removeListener = () => {
+        this.state.usersRef.child(`${this.state.user.uid}/colors`).off()
+    }
     
     openModal = () => this.setState({modal: true})
 
