@@ -156,6 +156,13 @@ class MessageForm extends Component {
 
     }
 
+    handleKeyDown = (e) => {
+
+        if(e.keyCode === 13){
+            this.sendMessage()
+        }
+    }
+
     handleTogglePicker = () => {
         this.setState({emojiPicker: !this.state.emojiPicker})
     }
@@ -220,6 +227,7 @@ class MessageForm extends Component {
                     className={
                         errors.some(error => error.message.includes('message')) ? 'error' : ""
                     }
+                    onKeyDown={this.handleKeyDown}
                 />
 
                 <Button.Group icon widths="2">
