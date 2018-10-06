@@ -62,6 +62,7 @@ class ColorPanel extends Component{
             })
             .then(() => {
                 console.log('Colors Added')
+                this.closeModal()
             })
             .catch(err => console.error(err))
     }
