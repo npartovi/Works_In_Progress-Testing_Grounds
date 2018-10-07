@@ -51,7 +51,7 @@ class UserPanel extends Component{
         const { storageRef, blob, userRef, metaData} = this.state
 
         storageRef
-            .child(`avatars/user-${userRef.uid}`)
+            .child(`avatars/user/${userRef.uid}`)
             .put(blob, metaData )
             .then(snap => {
                 snap.ref.getDownloadURL()
@@ -69,7 +69,6 @@ class UserPanel extends Component{
                 photoURL: this.state.uploadedCroppedImage
             })
             .then(() => {
-                console.log('PhotoURL updated')
                 this.closeModal()
             })
             .catch((err) => {
@@ -79,19 +78,13 @@ class UserPanel extends Component{
         this.state.usersRef
             .child(this.state.user.uid)
             .update({avatar: this.state.uploadedCroppedImage})
-            .then(() => {
-                console.log('User Avatar Updated')
-            })
-            .catch((err) => {
-                console.error(err)
-            })
+           
     }
 
     handleSignout = () => {
         firebase
             .auth()
             .signOut()
-            .then(() => console.log("signed Out"))
     }
 
     handleChange = (e) => {
