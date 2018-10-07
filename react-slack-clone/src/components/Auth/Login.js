@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Grid, Form, Segment, Button, Header, Message, Icon} from 'semantic-ui-react'
+import {Grid, Form, Segment, Button, Header, Message, Icon, Divider} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import firebase from '../../firebase'
 
@@ -18,6 +18,10 @@ class Login extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    guestLogin = () => {
+        this.setState({email: "ryu@gmail.com", password: "password"})
+    }
+
     handleChange(e){
         this.setState({[e.target.name]: e.target.value})
     }
@@ -29,7 +33,9 @@ class Login extends Component {
     }
     
     handleSubmit(e){
+
         e.preventDefault()
+
         if(this.isFormValid(this.state)){
             this.setState({errors: [], loading: true})
             firebase
@@ -62,8 +68,8 @@ class Login extends Component {
             <Grid textAlign="center" verticalAlign="middle" className="app">
                 <Grid.Column style={{maxWidth: 450}}>
                     <Header as="h1" icon color="violet" textAlign="center">
-                        <Icon name="code branch" color="violet" />
-                        Login to DevChat
+                        <Icon name="globe" color="violet" />
+                        Login to GlobeChat
                     </Header>
                     <Form onSubmit={this.handleSubmit} size="large">
                         <Segment stacked>
@@ -88,6 +94,8 @@ class Login extends Component {
                                 className={this.handleInputError(errors, 'password')}
                             />
                             <Button disabled={loading} className={loading ? 'loading' : ""} color="violet" fluid size="large">Submit</Button>
+                            <Divider />
+                            <Button disabled={loading} className={loading ? 'loading' : ""} color="violet" fluid size="large" onClick={this.guestLogin}>Guest Login</Button>
                         </Segment>
                     </Form>
                     {errors.length > 0 && (

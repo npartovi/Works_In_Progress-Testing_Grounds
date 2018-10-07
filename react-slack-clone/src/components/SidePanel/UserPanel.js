@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Grid, Header, Icon, Dropdown, Image, Modal, Input, Button} from 'semantic-ui-react'
+import {Grid, Header, Icon, Dropdown, Image, Modal, Input, Button, Divider} from 'semantic-ui-react'
 import firebase from '../../firebase'
 import {connect} from 'react-redux'
 import AvatarEditor from "react-avatar-editor"
@@ -121,11 +121,12 @@ class UserPanel extends Component{
             <Grid style={{background: primaryColor}}>
                 <Grid.Column>
                     <Grid.Row style={{padding: '1.2em', margin: 0}}>
-                        <Header inverted floated="left" as="h2">
-                            <Icon name="code" />
+                        <Header inverted floated="left" as="h3">
+                            <Icon name="globe" />
                             <Header.Content>
-                                Dev Chat
+                                Globe Chat
                             </Header.Content>
+                            <Divider />
                         </Header>
                         <Header style={{padding: '0.25em'}} as="h4" inverted>
                             <Dropdown 
