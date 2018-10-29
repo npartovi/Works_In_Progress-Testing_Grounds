@@ -5,9 +5,9 @@ class VideoList extends Component {
 
     render(){
 
-        if(this.props.video === null){
-            return null
-        }
+        // if(this.props.video === null){
+        //     return null
+        // }
         
         const { videos } = this.props
 
