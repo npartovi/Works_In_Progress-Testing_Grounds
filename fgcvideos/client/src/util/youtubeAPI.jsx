@@ -1,6 +1,6 @@
-import channelList from './channel-id-list'
-import keys from '../config'
-import axios from 'axios'
+// import channelList from './channel-id-list'
+// import keys from '../config'
+// import axios from 'axios'
 
 
 const youtubeAPI = (channels) => {

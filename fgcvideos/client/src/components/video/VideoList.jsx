@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
-import youtubeSearch from 'youtube-api-v3-search'
-// import './App.css';
 import VideoListItem from './VideoListItem'
-import keys from '../../config'
 
 class VideoList extends Component {
 

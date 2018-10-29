@@ -6,7 +6,7 @@ class NavBar extends Component {
         return(
             <nav>
                 <div className="logo">
-                    <img src={require("../../images/logo.png")}/>
+                    <img alt="" src={require("../../images/logo.png")}/>
                 </div>
                 <div className="nav-bar-links">
 
