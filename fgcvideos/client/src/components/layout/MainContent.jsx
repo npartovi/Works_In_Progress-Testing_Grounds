@@ -15,7 +15,7 @@ class MainContent extends Component {
     }
 
     componentDidMount(){
-        youtubeAPI()
+        this.test()
     }
 
     test(){
@@ -44,7 +44,7 @@ class MainContent extends Component {
 
     render(){
 
-        
+        console.log(this.state)
         const mainContent = this.state.allVideos.map((videos, idx) => (
             <VideoList key={idx} videos={videos} />
         ))

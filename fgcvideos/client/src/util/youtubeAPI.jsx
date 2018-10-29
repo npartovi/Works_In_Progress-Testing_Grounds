@@ -30,7 +30,7 @@ const youtubeAPI = (channels) => {
     // })
 
 
-    axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId={"uploads" Id}&key=${keys.youtubeAPIKey}&part=snippet&maxResults=50`)
+    // axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId={"uploads" Id}&key=${keys.youtubeAPIKey}&part=snippet&maxResults=50`)
 
    
 }
